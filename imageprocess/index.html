@@ -39,13 +39,17 @@
     <div class="tool edit" ng-if="editMODE">
       <label for="bright" ng-click="bright = 0; brightAdjust() ">Brightness: {{bright}}</label>
       <input type="range" ng-model="bright" id="bright-slider" min="-255" max="255" value="0" ng-change="brightAdjust()"/>
+      <input type="number" ng-model="bright" id="bright-slider" ng-change="brightAdjust()"/>
       <h4>Color</h4>
-      <p>Red: {{red}}</p>
+      <label for="red-slider">Red: {{red}}</label>
       <input type="range" ng-model="red" id="red-slider" min="-255" max="255" value="0" ng-change="color()"/>
-      <p>Green: {{green}}</p>
+      <input type="number" ng-model="red" id="red-slider" ng-change="color()"/>
+      <label for="green-slider">Green: {{green}}</label>
       <input type="range" ng-model="green" id="green-slider" min="-255" max="255" value="0" ng-change="color()"/>
-      <p>Blue: {{blue}}</p>
+      <input type="number" ng-model="red" id="red-slider" ng-change="color()"/>
+      <label for="blue-slider">Blue: {{blue}}</label>
       <input type="range" ng-model="blue" id="blue-slider" min="-255" max="255" value="0" ng-change="color()"/>
+      <input type="number" ng-model="red" id="red-slider" ng-change="color()"/>
     </div>
   </div>
 </div>

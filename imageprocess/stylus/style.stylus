@@ -14,7 +14,6 @@ body
   width 100%
   display flex
   .title
-    height 50px
     width 100%
     position absolute
     top 0
@@ -28,22 +27,10 @@ body
       width 100%
       margin auto
     .toggle-nav
-      width 50px
-      height 50px
       cursor pointer
       &:hover
         background-color #666
-      span
-        width 30px
-        height 2px
-        background-color #fff
-        display block
-        margin 0 10px 7px 10px
-        top 14px
-        position relative
     .toggle-tools
-      height 50px
-      width 50px
       position absolute
       top 0
       right 0
@@ -53,21 +40,6 @@ body
       span
         display block
         position relative
-        &:nth-child(1)
-          border-radius 2px
-          top 15px
-          left 8px
-          width 30px
-          height 20px
-          border 2px solid #fff
-        &:nth-child(2)
-          width 30px
-          height 2px
-          background-color #fff
-          border 2px solid #000
-          top -8px
-          left 8px
-          transform rotate(-45deg)
   .nav
     width 220px
     min-width 220px
@@ -157,9 +129,44 @@ input[type='file']
       background-color #666
 label
   padding 10px
+  display block
+input[type='range']
+  margin 0 10px
   
 // responsive
 @media screen and (max-width: 1368px)
+  .title
+    height 50px
+  .toggle-tools
+    height 50px
+    width 50px
+    span
+      &:nth-child(1)
+        border-radius 2px
+        top 15px
+        left 8px
+        width 30px
+        height 20px
+        border 2px solid #fff
+      &:nth-child(2)
+        width 30px
+        height 2px
+        background-color #fff
+        border 2px solid #000
+        top -8px
+        left 8px
+        transform rotate(-45deg)
+  .toggle-nav
+    height 50px
+    width 50px
+    span
+      width 30px
+      height 2px
+      background-color #fff
+      display block
+      margin 0 10px 7px 10px
+      top 14px
+      position relative
   .nav
     left -220px
     opacity 0
@@ -173,8 +180,11 @@ label
     right 0
     bottom 0
     left 0
-    
+  input[type='number']
+    display none  
 @media screen and (min-width: 1368px)
+  .title
+    height 50px
   .toggle-nav
     display none
   .toggle-tools
@@ -183,7 +193,50 @@ label
     left 0 !important
   .tools
     right 0 !important
-
+  input[type='number']
+    display none
+@media screen and (max-width: 768px)
+  .title
+    height 100px 
+  .toggle-nav 
+    height 100px 
+    width 100px 
+    span
+      width 60px 
+      height 4px 
+      margin 0 15px 14px 15px 
+      top 28px
+  .toggle-tools
+    height 100px
+    width 100px
+    span
+      &:nth-child(1)
+        border-radius 2px
+        top 30px
+        left 16px
+        width 60px
+        height 40px
+        border 4px solid #fff
+      &:nth-child(2)
+        width 60px
+        height 4px
+        background-color #fff
+        border 4px solid #000
+        top -16px
+        left 16px
+        transform rotate(-45deg)
+  .nav
+    padding-top 100px !important
+  .tools
+    padding-top 100px !important
+  .main
+    padding-top 100px
+  input[type='range']
+    display none
+  input[type='number']
+    margin 0 10px
+    display block
+    font-size 16px
 //common class
 .shadow
   box-shadow 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)

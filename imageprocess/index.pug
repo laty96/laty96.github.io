@@ -25,10 +25,16 @@
     .tool.edit(ng-if='editMODE')
       label(for='bright' ng-click='bright = 0; brightAdjust() ') Brightness: {{bright}}
       input(type="range" ng-model='bright' id='bright-slider' min='-255' max='255' value='0' ng-change='brightAdjust()')
+      input(type="number" ng-model='bright' id='bright-slider' ng-change='brightAdjust()')
       h4 Color
-      p Red: {{red}}
-      input(type="range" ng-model='red' id='red-slider' min='-255' max='255' value='0' ng-change='color()') 
-      p Green: {{green}}
+      label(for='red-slider') Red: {{red}}
+      input(type="range" ng-model='red' id='red-slider' min='-255' max='255' value='0' ng-change='color()')
+      input(type="number" ng-model='red' id='red-slider' ng-change='color()')
+      
+      label(for='green-slider') Green: {{green}}
       input(type="range" ng-model='green' id='green-slider' min='-255' max='255' value='0' ng-change='color()')
-      p Blue: {{blue}}
+      input(type="number" ng-model='red' id='red-slider' ng-change='color()')
+      
+      label(for='blue-slider') Blue: {{blue}}
       input(type="range" ng-model='blue' id='blue-slider' min='-255' max='255' value='0' ng-change='color()')
+      input(type="number" ng-model='red' id='red-slider' ng-change='color()')
