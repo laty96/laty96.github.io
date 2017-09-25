@@ -194,7 +194,7 @@ input[type='file'] {
 label {
   padding: 10px;
 }
-@media screen and (max-width: 1368px) {
+@media screen and (max-width: 1369px) {
   .nav {
     left: -220px;
     opacity: 0;
