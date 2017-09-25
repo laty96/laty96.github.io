@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by  Thanh</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+<div class="container" ng-app="myApp" ng-controller="myCtrl">
+  <div class="title shadow"> 
+    <div class="toggle-nav" id="toggle-nav"><span></span><span></span><span></span></div>
+    <h2>{{mode}}</h2>
+    <div class="toggle-tools" id="toggle-tool"><span></span><span></span></div>
+  </div>
+  <div class="nav shadow" id="nav">
+    <nav id="menu">
+      <div ng-click="edit()">Edit</div>
+      <div>a</div>
+      <div>a</div>
+    </nav>
+    <div class="nav-bg" id="close-nav"></div>
+  </div>
+  <div class="main" id="main">
+    <canvas id="canvas"></canvas>
+    <input type="file" id="image-file" accept="image/*"/>
+    <div class="input-group">
+      <input type="button" onclick="document.getElementById('image-file').click()" value="Select image"/>
+      <input type="text" id="image-url" ng-model="fileURL" placeholder="Or type URL"/>
+    </div>
+  </div>
+  <div class="tools shadow" id="tools">
+    <div class="tool edit" ng-if="editMODE">
+      <label for="bright" ng-click="bright = 0; brightAdjust() ">Brightness: {{bright}}</label>
+      <input type="range" ng-model="bright" id="bright-slider" min="-255" max="255" value="0" ng-change="brightAdjust()"/>
+      <h4>Color</h4>
+      <p>Red: {{red}}</p>
+      <input type="range" ng-model="red" id="red-slider" min="-255" max="255" value="0" ng-change="color()"/>
+      <p>Green: {{green}}</p>
+      <input type="range" ng-model="green" id="green-slider" min="-255" max="255" value="0" ng-change="color()"/>
+      <p>Blue: {{blue}}</p>
+      <input type="range" ng-model="blue" id="blue-slider" min="-255" max="255" value="0" ng-change="color()"/>
+    </div>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js'></script>
+
+    <script  src="js/index.js"></script>
+
+</body>
+</html>
