@@ -81,7 +81,7 @@ body {
   box-sizing: border-box;
   background-color: #444;
 }
-.container .nav nav div {
+.container .nav nav div, container .nav nav button {
   text-decoration: none;
   padding: 11px 25px 12px 25px;
   color: #fff;
@@ -89,7 +89,7 @@ body {
   font-size: 18px;
   cursor: pointer;
 }
-.container .nav nav div:hover {
+.container .nav nav div:hover, container .nav nav button:hover {
   background-color: #666;
 }
 .container .main {

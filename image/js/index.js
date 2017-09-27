@@ -589,6 +589,8 @@ app.controller("myCtrl", function($scope, $timeout) {
     img.onload = function() {
       let newcan = document.createElement("CANVAS"),
           ctxnew = newcan.getContext('2d');
+          newcan.width = img.width;
+          newcan.height = img.height;
         let hRatio = ctxnew.canvas.width / img.width;
         let vRatio = ctxnew.canvas.height / img.height;
         let ratio = Math.min(hRatio, vRatio);
