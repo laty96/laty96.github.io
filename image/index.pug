@@ -1,0 +1,47 @@
+link(rel="stylesheet", href="css/style.css")
+.container(ng-app='myApp' ng-controller='myCtrl')
+  .title.shadow 
+    .toggle-nav#toggle-nav
+      span
+      span
+      span
+    h2 {{mode}} {{rgba}}
+    .toggle-tools#toggle-tool
+      span
+      span
+  .nav#nav.shadow
+    nav#menu
+      div(ng-click='edit($event)') Edit
+      button(id='read') Read Image
+      button(id='classify') Classify
+    .nav-bg#close-nav
+  .main#main
+    #dropzone
+      canvas#canvas
+    #result
+    input(type="file" id='image-file' accept="image/*")
+    .input-group
+      input(type="button" onclick="document.getElementById('image-file').click()" value='Select image')
+      input(type="text" id='image-url' ng-model='fileURL' placeholder='Or type URL')
+  .tools#tools.shadow
+    .tool.edit(ng-if='editMODE')
+      label(for='bright' ng-click='bright = 0; brightAdjust() ') Brightness: {{bright}}
+      input(type="range" ng-model='bright' class='slider' id='bright-slider' min='-255' max='255' value='0' ng-change='brightAdjust()')
+      input(type="number" ng-model='bright' id='bright-slider' ng-change='brightAdjust()')
+      h4 Color
+      label(for='red-slider') Red: {{red}}
+      input(type="range" ng-model='red' class='slider' id='red-slider' min='-255' max='255' value='0' ng-change='color()')
+      input(type="number" ng-model='red' id='red-slider' ng-change='color()')
+      
+      label(for='green-slider') Green: {{green}}
+      input(type="range" ng-model='green' class='slider' id='green-slider' min='-255' max='255' value='0' ng-change='color()')
+      input(type="number" ng-model='red' id='red-slider' ng-change='color()')
+      
+      label(for='blue-slider') Blue: {{blue}}
+      input(type="range" ng-model='blue' class='slider' id='blue-slider' min='-255' max='255' value='0' ng-change='color()')
+      input(type="number" ng-model='red' id='red-slider' ng-change='color()')
+      
+script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js')
+script(src='js/index.js')
+script(src='js/tiff.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')

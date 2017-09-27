@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="css/style.css" />
+<div class="container" ng-app="myApp" ng-controller="myCtrl">
+  <div class="title shadow">
+    <div class="toggle-nav" id="toggle-nav"><span></span><span></span><span></span></div>
+    <h2>{{mode}} {{rgba}}</h2>
+    <div class="toggle-tools" id="toggle-tool"><span></span><span></span></div>
+  </div>
+  <div class="nav shadow" id="nav">
+    <nav id="menu">
+      <div ng-click="edit($event)">Edit</div><button id="read">Read Image</button><button id="classify">Classify</button></nav>
+    <div class="nav-bg" id="close-nav"></div>
+  </div>
+  <div class="main" id="main">
+    <div id="dropzone"><canvas id="canvas"></canvas></div>
+    <div id="result"></div><input type="file" id="image-file" accept="image/*" />
+    <div class="input-group"><input type="button" onclick="document.getElementById('image-file').click()" value="Select image" /><input type="text" id="image-url" ng-model="fileURL" placeholder="Or type URL" /></div>
+  </div>
+  <div class="tools shadow" id="tools">
+    <div class="tool edit" ng-if="editMODE"><label for="bright" ng-click="bright = 0; brightAdjust() ">Brightness: {{bright}}</label><input class="slider" type="range" ng-model="bright" id="bright-slider" min="-255" max="255" value="0" ng-change="brightAdjust()" /><input type="number" ng-model="bright"
+        id="bright-slider" ng-change="brightAdjust()" />
+      <h4>Color</h4><label for="red-slider">Red: {{red}}</label><input class="slider" type="range" ng-model="red" id="red-slider" min="-255" max="255" value="0" ng-change="color()" /><input type="number" ng-model="red" id="red-slider" ng-change="color()"
+      /><label for="green-slider">Green: {{green}}</label><input class="slider" type="range" ng-model="green" id="green-slider" min="-255" max="255" value="0" ng-change="color()" /><input type="number" ng-model="red" id="red-slider" ng-change="color()"
+      /><label for="blue-slider">Blue: {{blue}}</label><input class="slider" type="range" ng-model="blue" id="blue-slider" min="-255" max="255" value="0" ng-change="color()" /><input type="number" ng-model="red" id="red-slider" ng-change="color()" /></div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/tiff.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
