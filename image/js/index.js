@@ -356,7 +356,7 @@ app.controller("myCtrl", function($scope, $timeout) {
       temp = [0,0,0],
       datas = src.data;
 
-    for (let j = 0; j < datas.length; j += 4) {
+    for (let j = 0; j < 2000; j += 4) {
       let y = j % w;
       let x = Math.ceil(j / w);
       
@@ -620,7 +620,7 @@ app.controller("myCtrl", function($scope, $timeout) {
   function readImgBtn() {
     // console.log("read clicked" + imageSrc.width, imageSrc.height, imageSrc);
 
-    groupDivide(imageSrc.width, imageSrc.height, imageSrc);
+    groupDivide(1000, 1000, imageSrc);
     matrixMCal();
     X0Cal();
     if (CCal() === true) {
